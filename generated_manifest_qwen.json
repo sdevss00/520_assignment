@@ -1,0 +1,147 @@
+[
+  {
+    "task_id": "0",
+    "module": "generated_cot_qwen/0__c1.py",
+    "index": 1
+  },
+  {
+    "task_id": "0",
+    "module": "generated_cot_qwen/0__c2.py",
+    "index": 2
+  },
+  {
+    "task_id": "0",
+    "module": "generated_cot_qwen/0__c3.py",
+    "index": 3
+  },
+  {
+    "task_id": "10",
+    "module": "generated_cot_qwen/10__c1.py",
+    "index": 1
+  },
+  {
+    "task_id": "10",
+    "module": "generated_cot_qwen/10__c2.py",
+    "index": 2
+  },
+  {
+    "task_id": "10",
+    "module": "generated_cot_qwen/10__c3.py",
+    "index": 3
+  },
+  {
+    "task_id": "20",
+    "module": "generated_cot_qwen/20__c1.py",
+    "index": 1
+  },
+  {
+    "task_id": "20",
+    "module": "generated_cot_qwen/20__c2.py",
+    "index": 2
+  },
+  {
+    "task_id": "20",
+    "module": "generated_cot_qwen/20__c3.py",
+    "index": 3
+  },
+  {
+    "task_id": "30",
+    "module": "generated_cot_qwen/30__c1.py",
+    "index": 1
+  },
+  {
+    "task_id": "30",
+    "module": "generated_cot_qwen/30__c2.py",
+    "index": 2
+  },
+  {
+    "task_id": "30",
+    "module": "generated_cot_qwen/30__c3.py",
+    "index": 3
+  },
+  {
+    "task_id": "40",
+    "module": "generated_cot_qwen/40__c1.py",
+    "index": 1
+  },
+  {
+    "task_id": "40",
+    "module": "generated_cot_qwen/40__c2.py",
+    "index": 2
+  },
+  {
+    "task_id": "40",
+    "module": "generated_cot_qwen/40__c3.py",
+    "index": 3
+  },
+  {
+    "task_id": "50",
+    "module": "generated_cot_qwen/50__c1.py",
+    "index": 1
+  },
+  {
+    "task_id": "50",
+    "module": "generated_cot_qwen/50__c2.py",
+    "index": 2
+  },
+  {
+    "task_id": "60",
+    "module": "generated_cot_qwen/60__c1.py",
+    "index": 1
+  },
+  {
+    "task_id": "60",
+    "module": "generated_cot_qwen/60__c2.py",
+    "index": 2
+  },
+  {
+    "task_id": "60",
+    "module": "generated_cot_qwen/60__c3.py",
+    "index": 3
+  },
+  {
+    "task_id": "70",
+    "module": "generated_cot_qwen/70__c1.py",
+    "index": 1
+  },
+  {
+    "task_id": "70",
+    "module": "generated_cot_qwen/70__c2.py",
+    "index": 2
+  },
+  {
+    "task_id": "70",
+    "module": "generated_cot_qwen/70__c3.py",
+    "index": 3
+  },
+  {
+    "task_id": "80",
+    "module": "generated_cot_qwen/80__c1.py",
+    "index": 1
+  },
+  {
+    "task_id": "80",
+    "module": "generated_cot_qwen/80__c2.py",
+    "index": 2
+  },
+  {
+    "task_id": "80",
+    "module": "generated_cot_qwen/80__c3.py",
+    "index": 3
+  },
+  {
+    "task_id": "90",
+    "module": "generated_cot_qwen/90__c1.py",
+    "index": 1
+  },
+  {
+    "task_id": "90",
+    "module": "generated_cot_qwen/90__c2.py",
+    "index": 2
+  },
+  {
+    "task_id": "90",
+    "module": "generated_cot_qwen/90__c3.py",
+    "index": 3
+  }
+]

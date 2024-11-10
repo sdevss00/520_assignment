@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="15" skipped="0" tests="29" time="2.558" timestamp="2025-11-10T11:33:57.562588-05:00" hostname="Simardeeps-MacBook-Air.local"><testcase classname="test_humaneval" name="test_humaneval_candidate[0__c1]" time="0.001"><failure message="NameError: name 'List' is not defined">task_id = '0', module_path = 'generated_cot_qwen/0__c1.py', fn_name = 'has_close_elements'
+
+    @pytest.mark.parametrize("task_id, module_path, fn_name", CASES)
+    def test_humaneval_candidate(task_id, module_path, fn_name):
+&gt;       mod = load_module_from_path(module_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_humaneval.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_humaneval.py:14: in load_module_from_path
+    spec.loader.exec_module(mod)
+&lt;frozen importlib._bootstrap_external&gt;:1026: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+&gt;   def has_close_elements(numbers: List[float], threshold: float) -&gt; bool:
+                                    ^^^^
+E   NameError: name 'List' is not defined
+
+generated_cot_qwen/0__c1.py:1: NameError</failure></testcase><testcase classname="test_humaneval" name="test_humaneval_candidate[0__c2]" time="0.001"><failure message="NameError: name 'List' is not defined">task_id = '0', module_path = 'generated_cot_qwen/0__c2.py', fn_name = 'has_close_elements'
+
+    @pytest.mark.parametrize("task_id, module_path, fn_name", CASES)
+    def test_humaneval_candidate(task_id, module_path, fn_name):
+&gt;       mod = load_module_from_path(module_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_humaneval.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_humaneval.py:14: in load_module_from_path
+    spec.loader.exec_module(mod)
+&lt;frozen importlib._bootstrap_external&gt;:1026: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+&gt;   def has_close_elements(numbers: List[float], threshold: float) -&gt; bool:
+                                    ^^^^
+E   NameError: name 'List' is not defined
+
+generated_cot_qwen/0__c2.py:1: NameError</failure></testcase><testcase classname="test_humaneval" name="test_humaneval_candidate[0__c3]" time="0.001"><failure message="NameError: name 'List' is not defined">task_id = '0', module_path = 'generated_cot_qwen/0__c3.py', fn_name = 'has_close_elements'
+
+    @pytest.mark.parametrize("task_id, module_path, fn_name", CASES)
+    def test_humaneval_candidate(task_id, module_path, fn_name):
+&gt;       mod = load_module_from_path(module_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_humaneval.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_humaneval.py:14: in load_module_from_path
+    spec.loader.exec_module(mod)
+&lt;frozen importlib._bootstrap_external&gt;:1026: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+&gt;   def has_close_elements(numbers: List[float], threshold: float) -&gt; bool:
+                                    ^^^^
+E   NameError: name 'List' is not defined
+
+generated_cot_qwen/0__c3.py:1: NameError</failure></testcase><testcase classname="test_humaneval" name="test_humaneval_candidate[10__c1]" time="0.001"><failure message="AssertionError">task_id = 'HumanEval/10', module_path = 'generated_cot_qwen/10__c1.py', fn_name = 'make_palindrome'
+
+    @pytest.mark.parametrize("task_id, module_path, fn_name", CASES)
+    def test_humaneval_candidate(task_id, module_path, fn_name):
+        mod = load_module_from_path(module_path)
+        assert hasattr(mod, fn_name)
+        target_fn = getattr(mod, fn_name)
+    
+        # build candidate wrapper that HumanEval tests expect
+        ns = {"candidate": lambda *a, **kw: target_fn(*a, **kw)}
+        if task_id not in TESTS:
+            for k in TESTS.keys():
+                if f"/{task_id}_" in k or k.endswith(f"/{task_id}"):
+                    task_id = k
+                    break
+        exec(TESTS[task_id], ns, ns)
+        # run the check
+&gt;       ns["check"](ns["candidate"])
+
+test_humaneval.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+candidate = &lt;function test_humaneval_candidate.&lt;locals&gt;.&lt;lambda&gt; at 0x10b012340&gt;
+
+&gt;   ???
+E   AssertionError
+
+&lt;string&gt;:13: AssertionError</failure></testcase><testcase classname="test_humaneval" name="test_humaneval_candidate[10__c2]" time="0.001" /><testcase classname="test_humaneval" name="test_humaneval_candidate[10__c3]" time="0.000" /><testcase classname="test_humaneval" name="test_humaneval_candidate[20__c1]" time="0.000"><failure message="NameError: name 'List' is not defined">task_id = '20', module_path = 'generated_cot_qwen/20__c1.py', fn_name = 'find_closest_elements'
+
+    @pytest.mark.parametrize("task_id, module_path, fn_name", CASES)
+    def test_humaneval_candidate(task_id, module_path, fn_name):
+&gt;       mod = load_module_from_path(module_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_humaneval.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_humaneval.py:14: in load_module_from_path
+    spec.loader.exec_module(mod)
+&lt;frozen importlib._bootstrap_external&gt;:1026: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+&gt;   def find_closest_elements(numbers: List[float]) -&gt; Tuple[float, float]:
+                                       ^^^^
+E   NameError: name 'List' is not defined
+
+generated_cot_qwen/20__c1.py:1: NameError</failure></testcase><testcase classname="test_humaneval" name="test_humaneval_candidate[20__c2]" time="0.000"><failure message="NameError: name 'List' is not defined">task_id = '20', module_path = 'generated_cot_qwen/20__c2.py', fn_name = 'find_closest_elements'
+
+    @pytest.mark.parametrize("task_id, module_path, fn_name", CASES)
+    def test_humaneval_candidate(task_id, module_path, fn_name):
+&gt;       mod = load_module_from_path(module_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_humaneval.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_humaneval.py:14: in load_module_from_path
+    spec.loader.exec_module(mod)
+&lt;frozen importlib._bootstrap_external&gt;:1026: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+&gt;   def find_closest_elements(numbers: List[float]) -&gt; Tuple[float, float]:
+                                       ^^^^
+E   NameError: name 'List' is not defined
+
+generated_cot_qwen/20__c2.py:1: NameError</failure></testcase><testcase classname="test_humaneval" name="test_humaneval_candidate[20__c3]" time="0.001"><failure message="NameError: name 'List' is not defined">task_id = '20', module_path = 'generated_cot_qwen/20__c3.py', fn_name = 'find_closest_elements'
+
+    @pytest.mark.parametrize("task_id, module_path, fn_name", CASES)
+    def test_humaneval_candidate(task_id, module_path, fn_name):
+&gt;       mod = load_module_from_path(module_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_humaneval.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_humaneval.py:14: in load_module_from_path
+    spec.loader.exec_module(mod)
+&lt;frozen importlib._bootstrap_external&gt;:1026: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+&gt;   def find_closest_elements(numbers: List[float]) -&gt; Tuple[float, float] | None:
+                                       ^^^^
+E   NameError: name 'List' is not defined
+
+generated_cot_qwen/20__c3.py:1: NameError</failure></testcase><testcase classname="test_humaneval" name="test_humaneval_candidate[30__c1]" time="0.001" /><testcase classname="test_humaneval" name="test_humaneval_candidate[30__c2]" time="0.000" /><testcase classname="test_humaneval" name="test_humaneval_candidate[30__c3]" time="0.001" /><testcase classname="test_humaneval" name="test_humaneval_candidate[40__c1]" time="0.001" /><testcase classname="test_humaneval" name="test_humaneval_candidate[40__c2]" time="0.001" /><testcase classname="test_humaneval" name="test_humaneval_candidate[40__c3]" time="0.000" /><testcase classname="test_humaneval" name="test_humaneval_candidate[50__c1]" time="0.000"><failure message="NameError: name 'encode_shift' is not defined">task_id = 'HumanEval/50', module_path = 'generated_cot_qwen/50__c1.py', fn_name = 'encode_shift'
+
+    @pytest.mark.parametrize("task_id, module_path, fn_name", CASES)
+    def test_humaneval_candidate(task_id, module_path, fn_name):
+        mod = load_module_from_path(module_path)
+        assert hasattr(mod, fn_name)
+        target_fn = getattr(mod, fn_name)
+    
+        # build candidate wrapper that HumanEval tests expect
+        ns = {"candidate": lambda *a, **kw: target_fn(*a, **kw)}
+        if task_id not in TESTS:
+            for k in TESTS.keys():
+                if f"/{task_id}_" in k or k.endswith(f"/{task_id}"):
+                    task_id = k
+                    break
+        exec(TESTS[task_id], ns, ns)
+        # run the check
+&gt;       ns["check"](ns["candidate"])
+
+test_humaneval.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+candidate = &lt;function test_humaneval_candidate.&lt;locals&gt;.&lt;lambda&gt; at 0x10b055f80&gt;
+
+&gt;   ???
+E   NameError: name 'encode_shift' is not defined
+
+&lt;string&gt;:14: NameError</failure></testcase><testcase classname="test_humaneval" name="test_humaneval_candidate[50__c2]" time="0.000"><failure message="NameError: name 'encode_shift' is not defined">task_id = 'HumanEval/50', module_path = 'generated_cot_qwen/50__c2.py', fn_name = 'encode_shift'
+
+    @pytest.mark.parametrize("task_id, module_path, fn_name", CASES)
+    def test_humaneval_candidate(task_id, module_path, fn_name):
+        mod = load_module_from_path(module_path)
+        assert hasattr(mod, fn_name)
+        target_fn = getattr(mod, fn_name)
+    
+        # build candidate wrapper that HumanEval tests expect
+        ns = {"candidate": lambda *a, **kw: target_fn(*a, **kw)}
+        if task_id not in TESTS:
+            for k in TESTS.keys():
+                if f"/{task_id}_" in k or k.endswith(f"/{task_id}"):
+                    task_id = k
+                    break
+        exec(TESTS[task_id], ns, ns)
+        # run the check
+&gt;       ns["check"](ns["candidate"])
+
+test_humaneval.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+candidate = &lt;function test_humaneval_candidate.&lt;locals&gt;.&lt;lambda&gt; at 0x10b056700&gt;
+
+&gt;   ???
+E   NameError: name 'encode_shift' is not defined
+
+&lt;string&gt;:14: NameError</failure></testcase><testcase classname="test_humaneval" name="test_humaneval_candidate[60__c1]" time="0.000" /><testcase classname="test_humaneval" name="test_humaneval_candidate[60__c2]" time="0.000" /><testcase classname="test_humaneval" name="test_humaneval_candidate[60__c3]" time="0.001" /><testcase classname="test_humaneval" name="test_humaneval_candidate[70__c1]" time="0.002"><failure message="RecursionError: maximum recursion depth exceeded">task_id = 'HumanEval/70', module_path = 'generated_cot_qwen/70__c1.py', fn_name = 'strange_sort_list'
+
+    @pytest.mark.parametrize("task_id, module_path, fn_name", CASES)
+    def test_humaneval_candidate(task_id, module_path, fn_name):
+        mod = load_module_from_path(module_path)
+        assert hasattr(mod, fn_name)
+        target_fn = getattr(mod, fn_name)
+    
+        # build candidate wrapper that HumanEval tests expect
+        ns = {"candidate": lambda *a, **kw: target_fn(*a, **kw)}
+        if task_id not in TESTS:
+            for k in TESTS.keys():
+                if f"/{task_id}_" in k or k.endswith(f"/{task_id}"):
+                    task_id = k
+                    break
+        exec(TESTS[task_id], ns, ns)
+        # run the check
+&gt;       ns["check"](ns["candidate"])
+
+test_humaneval.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+&lt;string&gt;:4: in check
+    ???
+test_humaneval.py:36: in &lt;lambda&gt;
+    ns = {"candidate": lambda *a, **kw: target_fn(*a, **kw)}
+                                        ^^^^^^^^^^^^^^^^^^^
+generated_cot_qwen/70__c1.py:7: in strange_sort_list
+    return [min_val] + strange_sort_list([x for x in lst if x != min_val or x != max_val]) + [max_val]
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+generated_cot_qwen/70__c1.py:7: in strange_sort_list
+    return [min_val] + strange_sort_list([x for x in lst if x != min_val or x != max_val]) + [max_val]
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   RecursionError: maximum recursion depth exceeded
+!!! Recursion detected (same locals &amp; position)</failure></testcase><testcase classname="test_humaneval" name="test_humaneval_candidate[70__c2]" time="0.001" /><testcase classname="test_humaneval" name="test_humaneval_candidate[70__c3]" time="0.001"><failure message="IndexError: pop index out of range">task_id = 'HumanEval/70', module_path = 'generated_cot_qwen/70__c3.py', fn_name = 'strange_sort_list'
+
+    @pytest.mark.parametrize("task_id, module_path, fn_name", CASES)
+    def test_humaneval_candidate(task_id, module_path, fn_name):
+        mod = load_module_from_path(module_path)
+        assert hasattr(mod, fn_name)
+        target_fn = getattr(mod, fn_name)
+    
+        # build candidate wrapper that HumanEval tests expect
+        ns = {"candidate": lambda *a, **kw: target_fn(*a, **kw)}
+        if task_id not in TESTS:
+            for k in TESTS.keys():
+                if f"/{task_id}_" in k or k.endswith(f"/{task_id}"):
+                    task_id = k
+                    break
+        exec(TESTS[task_id], ns, ns)
+        # run the check
+&gt;       ns["check"](ns["candidate"])
+
+test_humaneval.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+&lt;string&gt;:4: in check
+    ???
+test_humaneval.py:36: in &lt;lambda&gt;
+    ns = {"candidate": lambda *a, **kw: target_fn(*a, **kw)}
+                                        ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+lst = [2, 3, 4]
+
+    def strange_sort_list(lst):
+        if not lst:
+            return []
+        result = []
+        while lst:
+            min_val = min(lst)
+            max_val = max(lst)
+            index_min = lst.index(min_val)
+            index_max = lst.index(max_val)
+            result.extend([min_val, max_val])
+            lst.pop(index_min)
+&gt;           lst.pop(index_max)
+E           IndexError: pop index out of range
+
+generated_cot_qwen/70__c3.py:12: IndexError</failure></testcase><testcase classname="test_humaneval" name="test_humaneval_candidate[80__c1]" time="0.000"><failure message="AssertionError: xyy">task_id = 'HumanEval/80', module_path = 'generated_cot_qwen/80__c1.py', fn_name = 'is_happy'
+
+    @pytest.mark.parametrize("task_id, module_path, fn_name", CASES)
+    def test_humaneval_candidate(task_id, module_path, fn_name):
+        mod = load_module_from_path(module_path)
+        assert hasattr(mod, fn_name)
+        target_fn = getattr(mod, fn_name)
+    
+        # build candidate wrapper that HumanEval tests expect
+        ns = {"candidate": lambda *a, **kw: target_fn(*a, **kw)}
+        if task_id not in TESTS:
+            for k in TESTS.keys():
+                if f"/{task_id}_" in k or k.endswith(f"/{task_id}"):
+                    task_id = k
+                    break
+        exec(TESTS[task_id], ns, ns)
+        # run the check
+&gt;       ns["check"](ns["candidate"])
+
+test_humaneval.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+candidate = &lt;function test_humaneval_candidate.&lt;locals&gt;.&lt;lambda&gt; at 0x10b056fc0&gt;
+
+&gt;   ???
+E   AssertionError: xyy
+
+&lt;string&gt;:9: AssertionError</failure></testcase><testcase classname="test_humaneval" name="test_humaneval_candidate[80__c2]" time="0.000" /><testcase classname="test_humaneval" name="test_humaneval_candidate[80__c3]" time="0.000" /><testcase classname="test_humaneval" name="test_humaneval_candidate[90__c1]" time="0.000"><failure message="AssertionError">task_id = 'HumanEval/90', module_path = 'generated_cot_qwen/90__c1.py', fn_name = 'next_smallest'
+
+    @pytest.mark.parametrize("task_id, module_path, fn_name", CASES)
+    def test_humaneval_candidate(task_id, module_path, fn_name):
+        mod = load_module_from_path(module_path)
+        assert hasattr(mod, fn_name)
+        target_fn = getattr(mod, fn_name)
+    
+        # build candidate wrapper that HumanEval tests expect
+        ns = {"candidate": lambda *a, **kw: target_fn(*a, **kw)}
+        if task_id not in TESTS:
+            for k in TESTS.keys():
+                if f"/{task_id}_" in k or k.endswith(f"/{task_id}"):
+                    task_id = k
+                    break
+        exec(TESTS[task_id], ns, ns)
+        # run the check
+&gt;       ns["check"](ns["candidate"])
+
+test_humaneval.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+candidate = &lt;function test_humaneval_candidate.&lt;locals&gt;.&lt;lambda&gt; at 0x10b0567a0&gt;
+
+&gt;   ???
+E   AssertionError
+
+&lt;string&gt;:7: AssertionError</failure></testcase><testcase classname="test_humaneval" name="test_humaneval_candidate[90__c2]" time="0.000"><failure message="AssertionError">task_id = 'HumanEval/90', module_path = 'generated_cot_qwen/90__c2.py', fn_name = 'next_smallest'
+
+    @pytest.mark.parametrize("task_id, module_path, fn_name", CASES)
+    def test_humaneval_candidate(task_id, module_path, fn_name):
+        mod = load_module_from_path(module_path)
+        assert hasattr(mod, fn_name)
+        target_fn = getattr(mod, fn_name)
+    
+        # build candidate wrapper that HumanEval tests expect
+        ns = {"candidate": lambda *a, **kw: target_fn(*a, **kw)}
+        if task_id not in TESTS:
+            for k in TESTS.keys():
+                if f"/{task_id}_" in k or k.endswith(f"/{task_id}"):
+                    task_id = k
+                    break
+        exec(TESTS[task_id], ns, ns)
+        # run the check
+&gt;       ns["check"](ns["candidate"])
+
+test_humaneval.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+candidate = &lt;function test_humaneval_candidate.&lt;locals&gt;.&lt;lambda&gt; at 0x10b056020&gt;
+
+&gt;   ???
+E   AssertionError
+
+&lt;string&gt;:7: AssertionError</failure></testcase><testcase classname="test_humaneval" name="test_humaneval_candidate[90__c3]" time="0.001"><failure message="AssertionError">task_id = 'HumanEval/90', module_path = 'generated_cot_qwen/90__c3.py', fn_name = 'next_smallest'
+
+    @pytest.mark.parametrize("task_id, module_path, fn_name", CASES)
+    def test_humaneval_candidate(task_id, module_path, fn_name):
+        mod = load_module_from_path(module_path)
+        assert hasattr(mod, fn_name)
+        target_fn = getattr(mod, fn_name)
+    
+        # build candidate wrapper that HumanEval tests expect
+        ns = {"candidate": lambda *a, **kw: target_fn(*a, **kw)}
+        if task_id not in TESTS:
+            for k in TESTS.keys():
+                if f"/{task_id}_" in k or k.endswith(f"/{task_id}"):
+                    task_id = k
+                    break
+        exec(TESTS[task_id], ns, ns)
+        # run the check
+&gt;       ns["check"](ns["candidate"])
+
+test_humaneval.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+candidate = &lt;function test_humaneval_candidate.&lt;locals&gt;.&lt;lambda&gt; at 0x10b055760&gt;
+
+&gt;   ???
+E   AssertionError
+
+&lt;string&gt;:7: AssertionError</failure></testcase></testsuite></testsuites>
