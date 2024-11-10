@@ -11,4 +11,5 @@ dependencies = [
     "mlx-lm>=0.28.3",
     "outlines>=1.2.7",
     "pydantic>=2.12.3",
+    "pytest>=9.0.0",
 ]
